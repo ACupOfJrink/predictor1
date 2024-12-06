@@ -112,7 +112,7 @@ if Choice==0:
 else:
     #
     feature_names1 = ['resp_median', 'sbp_min', 'agp_avg', 'hr_max', 'icustay_seq', 'DOP', 'agp_min', 'lactate_mean', 'Age', 'wbc', 'resp_max', 'bun', 'hr_min', 'creatinine', 'sbp_var', 'ventilation', 'pco2', 'totalco2', 'weight', 'gcs']
-    resp_rate_median_value1 = st.number_input("",value=0.50,key='resp_rate_median_value1')
+    resp_rate_median_value1 = st.number_input("resp rate median value",value=0.50,key='resp_rate_median_value1')
     #
     sbp_min_value1 = st.number_input("sbp min value",value=0.50,key='')
     #
