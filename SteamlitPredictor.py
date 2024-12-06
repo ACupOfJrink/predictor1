@@ -41,7 +41,7 @@ thal_options = {
 # Streamlit user interface
 st.title("Probability predictor of sepsis and mortality in ICU patients with COVID-19")
 # Choose  the target
-Choice=st.selectbox("Predict the target",options=['0','1'],format_func=lambda x: 'Sepsis' if x == 0 else 'mortality')
+Choice=st.selectbox("Predict the target",options=[0,1],format_func=lambda x: 'Sepsis' if x == 0 else 'mortality')
 if Choice==0:
     feature_names = ['agp_min', 'bun', 'hospstay_seq', 'sbp_min0', 'po2', 'resp_avg', 'DOP', 'hr_max', 'agp_max', 'los_icu', 'resp_max', 'ast_max', 'ph', 'creatinine', 'inr_avg', 'ventilation', 'pco2', 'Gender', 'gcs', 'resp_var']
     #
@@ -187,9 +187,11 @@ else:
         Death_top_feature=list(pd.read_csv("top_20_features_death1.csv").feature)
         X_train1=X_train[Death_top_feature]
         X_train_kmeans = shap.kmeans(X_train1, K)
-
+        string1="please wait for the generation of the SHAP force plot"
+        st.write(string1)
         explainer1 = shap.KernelExplainer(Deathmodel.predict_proba , X_train_kmeans)
         shap_values1 = explainer1.shap_values(pd.DataFrame([feature_values1],columns=feature_names1))
         shap.force_plot(explainer1.expected_value[0], shap_values1[0,:,0], pd.DataFrame([feature_values1],columns=feature_names1), matplotlib=True)   
         plt.savefig("shap_force_plot.png", bbox_inches='tight', dpi=1200)
         st.image("shap_force_plot.png")
+        string1=''
