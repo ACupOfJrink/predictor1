@@ -109,7 +109,7 @@ if Choice==0:
 # Choose target "Death" 
 else:
     #
-    feature_names = ['resp_median', 'sbp_min', 'agp_avg', 'hr_max', 'icustay_seq', 'DOP', 'agp_min', 'lactate_mean', 'Age', 'wbc', 'resp_max', 'bun', 'hr_min', 'creatinine', 'sbp_var', 'ventilation', 'pco2', 'totalco2', 'weight', 'gcs']
+    feature_names1 = ['resp_median', 'sbp_min', 'agp_avg', 'hr_max', 'icustay_seq', 'DOP', 'agp_min', 'lactate_mean', 'Age', 'wbc', 'resp_max', 'bun', 'hr_min', 'creatinine', 'sbp_var', 'ventilation', 'pco2', 'totalco2', 'weight', 'gcs']
     resp_rate_median_value1 = st.number_input("",value=0.50,key='resp_rate_median_value1')
     #
     sbp_min_value1 = st.number_input("",value=0.50,key='')
@@ -150,13 +150,13 @@ else:
     # 
     gcs1 = st.number_input("",value=0.50,key='gcs1')
 
-    feature_values = [resp_rate_median_value1,sbp_min_value1,agp_avg1,hr_max_value1,icustay_seq1,Disease_Onset_Period1,agp_min1,lactate_mean1,Age1,wbc1,resp_rate_max_value1,bun1,hr_min_value1,creatinine_baseline1,sbp_variance_value1,ventilation1,pco21,totalco21,weight1,gcs1]
-    features = np.array([feature_values])    
+    feature_values1 = [resp_rate_median_value1,sbp_min_value1,agp_avg1,hr_max_value1,icustay_seq1,Disease_Onset_Period1,agp_min1,lactate_mean1,Age1,wbc1,resp_rate_max_value1,bun1,hr_min_value1,creatinine_baseline1,sbp_variance_value1,ventilation1,pco21,totalco21,weight1,gcs1]
+    features1 = np.array([feature_values1])    
 
     if st.button("Predict"):    
         # Predict class and probabilities    
-        predicted_class = Deathmodel.predict(features)[0]    
-        predicted_proba = Deathmodel.predict_proba(features)[0]
+        predicted_class = Deathmodel.predict(features1)[0]    
+        predicted_proba = Deathmodel.predict_proba(features1)[0]
 
         # Display prediction results    
         st.write(f"**Predicted Class:** {predicted_class}")    
