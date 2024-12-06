@@ -99,7 +99,9 @@ if Choice==0:
                 )
         st.write(advice)
 
-        # Calculate SHAP values and display force plot    
+        # Calculate SHAP values and display force plot   
+        string1="please wait for the generation of the SHAP force plot"
+        st.write(string1)
         explainer = shap.TreeExplainer(Sepsismodel)    
         shap_values = explainer.shap_values(pd.DataFrame([feature_values], columns=feature_names))
         shap.force_plot(explainer.expected_value, shap_values[0], pd.DataFrame([feature_values], columns=feature_names), matplotlib=True)    
@@ -112,43 +114,43 @@ else:
     feature_names1 = ['resp_median', 'sbp_min', 'agp_avg', 'hr_max', 'icustay_seq', 'DOP', 'agp_min', 'lactate_mean', 'Age', 'wbc', 'resp_max', 'bun', 'hr_min', 'creatinine', 'sbp_var', 'ventilation', 'pco2', 'totalco2', 'weight', 'gcs']
     resp_rate_median_value1 = st.number_input("",value=0.50,key='resp_rate_median_value1')
     #
-    sbp_min_value1 = st.number_input("",value=0.50,key='')
+    sbp_min_value1 = st.number_input("sbp min value",value=0.50,key='')
     #
-    agp_avg1 = st.number_input("",value=0.50,key='agp_avg1')
+    agp_avg1 = st.number_input("agp avg1",value=0.50,key='agp_avg1')
     #
-    hr_max_value1 = st.number_input("",value=0.50,key='hr_max_value1')
+    hr_max_value1 = st.number_input("hr max value1",value=0.50,key='hr_max_value1')
     #
-    icustay_seq1 = st.number_input("",value=0.50,key='icustay_seq1')
+    icustay_seq1 = st.number_input("icustay seq",value=0.50,key='icustay_seq1')
     #
-    Disease_Onset_Period1 = st.number_input("",value=0.50,key='Disease_Onset_Period1')
+    Disease_Onset_Period1 = st.number_input("Disease Onset Period",value=0.50,key='Disease_Onset_Period1')
     #
-    agp_min1 = st.number_input("",value=0.50,key='agp_min1')
+    agp_min1 = st.number_input("agp min",value=0.50,key='agp_min1')
     #
-    lactate_mean1 = st.number_input("",value=0.50,key='lactate_mean1')
+    lactate_mean1 = st.number_input("lactate mean",value=0.50,key='lactate_mean1')
     #
-    Age1 = st.number_input("",value=0.50,key='Age1')
+    Age1 = st.number_input("Age",value=0.50,key='Age1')
     #
-    wbc1 = st.number_input("",value=0.50,key='wbc1')
+    wbc1 = st.number_input("wbc",value=0.50,key='wbc1')
     # 
-    resp_rate_max_value1 = st.number_input("",value=0.50,key='resp_rate_max_value1')
+    resp_rate_max_value1 = st.number_input("resp rate max value",value=0.50,key='resp_rate_max_value1')
     #
-    bun1 = st.number_input("",value=0.50,key='bun1')
+    bun1 = st.number_input("bun",value=0.50,key='bun1')
     #
-    hr_min_value1 = st.number_input("",value=0.50,key='hr_min_value1')
+    hr_min_value1 = st.number_input("hr min value",value=0.50,key='hr_min_value1')
     #
-    creatinine_baseline1 = st.number_input("",value=0.50,key='creatinine_baseline1')
+    creatinine_baseline1 = st.number_input("creatinine baseline",value=0.50,key='creatinine_baseline1')
     #
-    sbp_variance_value1 = st.number_input("",value=0.50,key='sbp_variance_value1')
+    sbp_variance_value1 = st.number_input("sbp variance value",value=0.50,key='sbp_variance_value1')
     # 
-    ventilation1 = st.number_input("",value=0.50,key='ventilation1')
+    ventilation1 = st.number_input("ventilation",value=0.50,key='ventilation1')
     # 
-    pco21 = st.number_input("",value=0.50,key='pco21')
+    pco21 = st.number_input("pco2",value=0.50,key='pco21')
     # 
-    totalco21 = st.number_input("",value=0.50,key='totalco21')
+    totalco21 = st.number_input("totalco2",value=0.50,key='totalco21')
     # 
-    weight1 = st.number_input("",value=0.50,key='weight1')
+    weight1 = st.number_input("weight",value=0.50,key='weight1')
     # 
-    gcs1 = st.number_input("",value=0.50,key='gcs1')
+    gcs1 = st.number_input("gcs",value=0.50,key='gcs1')
 
     feature_values1 = [resp_rate_median_value1,sbp_min_value1,agp_avg1,hr_max_value1,icustay_seq1,Disease_Onset_Period1,agp_min1,lactate_mean1,Age1,wbc1,resp_rate_max_value1,bun1,hr_min_value1,creatinine_baseline1,sbp_variance_value1,ventilation1,pco21,totalco21,weight1,gcs1]
     features1 = np.array([feature_values1])    
