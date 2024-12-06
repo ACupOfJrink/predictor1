@@ -72,7 +72,7 @@ if Choice==0:
     if st.button("Predict"):    
         # Predict class and probabilities    
         predicted_class = Sepsismodel.predict(features)[0]   
-        predicted_proba = Sepsismodel.predict_proba(features)
+        predicted_proba = Sepsismodel.predict_proba(features)[0]
 
         # Display prediction results    
         st.write(f"**Predicted Class:** {predicted_class}")    
