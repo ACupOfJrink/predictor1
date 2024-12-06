@@ -45,46 +45,28 @@ Choice=st.selectbox("Predict the target",options=['0','1'],format_func=lambda x:
 if Choice==0:
     feature_names = ['agp_min', 'bun', 'hospstay_seq', 'sbp_min0', 'po2', 'resp_avg', 'DOP', 'hr_max', 'agp_max', 'los_icu', 'resp_max', 'ast_max', 'ph', 'creatinine', 'inr_avg', 'ventilation', 'pco2', 'Gender', 'gcs', 'resp_var']
     #
-    agp_min = st.number_input("",value=0.50)
-    #
-    bun = st.number_input("",value=0.50)
-    #
-    hospstay_seq = st.number_input("",value=0.50)
-    #
-    sbp_min_value = st.number_input("",value=0.50)
-    #
-    po2 = st.number_input("",value=0.50)
-    #
-    resp_rate_avg_value = st.number_input("",value=0.50)
-    #
-    Disease_Onset_Period = st.number_input("",value=0.50)
-    #
-    hr_max_value = st.number_input("",value=0.50)
-    #
-    agp_max = st.number_input("",value=0.50)
-    #
-    los_icu = st.number_input("",value=0.50)
-    #
-    resp_rate_max_value = st.number_input("",value=0.50)
-    #
-    ast_max = st.number_input("",value=0.50)
-    #
-    ph = st.number_input("",value=0.50)
-    #
-    creatinine = st.number_input("",value=0.50)
-    # 
-    inr_avg = st.number_input("",value=0.50)
-    # 
-    ventilation= st.number_input("",value=0.50)
-    # 
-    pco2 = st.number_input("",value=0.50)
-    # 
-    Gender = st.selectbox("Sex (0=Female, 1=Male):", options=[0, 1], format_func=lambda x: 'Female (0)' if x == 0 else 'Male (1)')
-    # 
-    gcs = st.number_input("",value=0.50)
-    # 
-    resp_rate_variance_value = st.number_input("",value=0.50)
-    # 
+    # Add unique key for each number_input
+    agp_min = st.number_input("AGP Min", value=0.50, key="agp_min")
+    bun = st.number_input("BUN", value=0.50, key="bun")
+    hospstay_seq = st.number_input("Hospital Stay Sequence", value=0.50, key="hospstay_seq")
+    sbp_min_value = st.number_input("SBP Min", value=0.50, key="sbp_min_value")
+    po2 = st.number_input("PO2", value=0.50, key="po2")
+    resp_rate_avg_value = st.number_input("Resp Rate Avg", value=0.50, key="resp_rate_avg_value")
+    Disease_Onset_Period = st.number_input("Disease Onset Period", value=0.50, key="Disease_Onset_Period")
+    hr_max_value = st.number_input("HR Max", value=0.50, key="hr_max_value")
+    agp_max = st.number_input("AGP Max", value=0.50, key="agp_max")
+    los_icu = st.number_input("LOS ICU", value=0.50, key="los_icu")
+    resp_rate_max_value = st.number_input("Resp Rate Max", value=0.50, key="resp_rate_max_value")
+    ast_max = st.number_input("AST Max", value=0.50, key="ast_max")
+    ph = st.number_input("PH", value=0.50, key="ph")
+    creatinine = st.number_input("Creatinine", value=0.50, key="creatinine")
+    inr_avg = st.number_input("INR Avg", value=0.50, key="inr_avg")
+    ventilation = st.number_input("Ventilation", value=0.50, key="ventilation")
+    pco2 = st.number_input("PCO2", value=0.50, key="pco2")
+    Gender = st.selectbox("Sex (0=Female, 1=Male):", options=[0, 1], format_func=lambda x: 'Female (0)' if x == 0 else 'Male (1)', key="Gender")
+    gcs = st.number_input("GCS", value=0.50, key="gcs")
+    resp_rate_variance_value = st.number_input("Resp Rate Variance", value=0.50, key="resp_rate_variance_value")
+
     feature_values = [agp_min, bun, hospstay_seq, sbp_min_value, po2, resp_rate_avg_value, Disease_Onset_Period, hr_max_value, agp_max, los_icu, resp_rate_max_value, ast_max, ph, creatinine, inr_avg, ventilation, pco2, Gender, gcs, resp_rate_variance_value]
     features = np.array([feature_values])
     if st.button("Predict"):    
