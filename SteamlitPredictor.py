@@ -184,6 +184,8 @@ else:
         st.write(advice)
         K = 100
         X_train=pd.read_csv('COVID_Filled_cut_missing_row.csv')
+        Death_top_feature=list(pd.read_excel("top_20_features_death.xlsx").feature)
+        X_train=X_train[Death_top_feature]
         X_train_kmeans = shap.kmeans(X_train, K)
 
         explainer1 = shap.KernelExplainer(Deathmodel.predict_proba , X_train_kmeans)
