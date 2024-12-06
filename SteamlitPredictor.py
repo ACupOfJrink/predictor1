@@ -128,45 +128,45 @@ if Choice==0:
 else:
     #
     feature_names = ['resp_median', 'sbp_min', 'agp_avg', 'hr_max', 'icustay_seq', 'DOP', 'agp_min', 'lactate_mean', 'Age', 'wbc', 'resp_max', 'bun', 'hr_min', 'creatinine', 'sbp_var', 'ventilation', 'pco2', 'totalco2', 'weight', 'gcs']
-    resp_rate_median_value = st.number_input("", min_value=1, max_value=120, value=50)
+    resp_rate_median_value = st.number_input("", min_value=1, max_value=120, value=0.50)
     #
-    sbp_min_value = st.selectbox("",value=0.5)
+    sbp_min_value = st.number_input("",value=0.50)
     #
-    agp_avg = st.selectbox("",value=0.5)
+    agp_avg = st.number_input("",value=0.50)
     #
-    hr_max_value = st.number_input("",value=0.5)
+    hr_max_value = st.number_input("",value=0.50)
     #
-    icustay_seq = st.number_input("",value=0.5)
+    icustay_seq = st.number_input("",value=0.50)
     #
-    Disease_Onset_Period = st.selectbox("",value=0.5)
+    Disease_Onset_Period = st.number_input("",value=0.50)
     #
-    agp_min = st.selectbox("",value=0.5)
+    agp_min = st.number_input("",value=0.50)
     #
-    lactate_mean = st.number_input("",value=0.5)
+    lactate_mean = st.number_input("",value=0.50)
     #
-    Age = st.selectbox("",value=0.5)
+    Age = st.number_input("",value=0.50)
     #
-    wbc = st.number_input("",value=0.5)
+    wbc = st.number_input("",value=0.50)
     # 
-    resp_rate_max_value = st.number_input("",value=0.5)
+    resp_rate_max_value = st.number_input("",value=0.50)
     #
-    bun = st.selectbox("",value=0.5)
+    bun = st.number_input("",value=0.50)
     #
-    hr_min_value = st.number_input("",value=0.5)
+    hr_min_value = st.number_input("",value=0.50)
     #
-    creatinine_baseline = st.number_input("",value=0.5)
+    creatinine_baseline = st.number_input("",value=0.50)
     #
-    sbp_variance_value = st.number_input("",value=0.5)
+    sbp_variance_value = st.number_input("",value=0.50)
     # 
-    ventilation = st.number_input("",value=0.5)
+    ventilation = st.number_input("",value=0.50)
     # 
-    pco2= st.number_input("",value=0.5)
+    pco2= st.number_input("",value=0.50)
     # 
-    totalco2 = st.number_input("",value=0.5)
+    totalco2 = st.number_input("",value=0.50)
     # 
-    weight = st.number_input("",value=0.5)
+    weight = st.number_input("",value=0.50)
     # 
-    gcs = st.number_input("",value=0.5)
+    gcs = st.number_input("",value=0.50)
 
     feature_values = [resp_rate_median_value,sbp_min_value,agp_avg,hr_max_value,icustay_seq,Disease_Onset_Period,agp_min,lactate_mean,Age,wbc,resp_rate_max_value,bun,hr_min_value,creatinine_baseline,sbp_variance_value,ventilation,pco2,totalco2,weight,gcs]
     features = np.array([feature_values])    
