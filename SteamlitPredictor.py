@@ -110,47 +110,47 @@ if Choice==0:
 else:
     #
     feature_names = ['resp_median', 'sbp_min', 'agp_avg', 'hr_max', 'icustay_seq', 'DOP', 'agp_min', 'lactate_mean', 'Age', 'wbc', 'resp_max', 'bun', 'hr_min', 'creatinine', 'sbp_var', 'ventilation', 'pco2', 'totalco2', 'weight', 'gcs']
-    resp_rate_median_value = st.number_input("",value=0.50)
+    resp_rate_median_value1 = st.number_input("",value=0.50,key='resp_rate_median_value1')
     #
-    sbp_min_value = st.number_input("",value=0.50)
+    sbp_min_value1 = st.number_input("",value=0.50,key='')
     #
-    agp_avg = st.number_input("",value=0.50)
+    agp_avg1 = st.number_input("",value=0.50,key='agp_avg1')
     #
-    hr_max_value = st.number_input("",value=0.50)
+    hr_max_value1 = st.number_input("",value=0.50,key='hr_max_value1')
     #
-    icustay_seq = st.number_input("",value=0.50)
+    icustay_seq1 = st.number_input("",value=0.50,key='icustay_seq1')
     #
-    Disease_Onset_Period = st.number_input("",value=0.50)
+    Disease_Onset_Period1 = st.number_input("",value=0.50,key='Disease_Onset_Period1')
     #
-    agp_min = st.number_input("",value=0.50)
+    agp_min1 = st.number_input("",value=0.50,key='agp_min1')
     #
-    lactate_mean = st.number_input("",value=0.50)
+    lactate_mean1 = st.number_input("",value=0.50,key='lactate_mean1')
     #
-    Age = st.number_input("",value=0.50)
+    Age1 = st.number_input("",value=0.50,key='Age1')
     #
-    wbc = st.number_input("",value=0.50)
+    wbc1 = st.number_input("",value=0.50,key='wbc1')
     # 
-    resp_rate_max_value = st.number_input("",value=0.50)
+    resp_rate_max_value1 = st.number_input("",value=0.50,key='resp_rate_max_value1')
     #
-    bun = st.number_input("",value=0.50)
+    bun1 = st.number_input("",value=0.50,key='bun1')
     #
-    hr_min_value = st.number_input("",value=0.50)
+    hr_min_value1 = st.number_input("",value=0.50,key='hr_min_value1')
     #
-    creatinine_baseline = st.number_input("",value=0.50)
+    creatinine_baseline1 = st.number_input("",value=0.50,key='creatinine_baseline1')
     #
-    sbp_variance_value = st.number_input("",value=0.50)
+    sbp_variance_value1 = st.number_input("",value=0.50,key='sbp_variance_value1')
     # 
-    ventilation = st.number_input("",value=0.50)
+    ventilation1 = st.number_input("",value=0.50,key='ventilation1')
     # 
-    pco2= st.number_input("",value=0.50)
+    pco21 = st.number_input("",value=0.50,key='pco21')
     # 
-    totalco2 = st.number_input("",value=0.50)
+    totalco21 = st.number_input("",value=0.50,key='totalco21')
     # 
-    weight = st.number_input("",value=0.50)
+    weight1 = st.number_input("",value=0.50,key='weight1')
     # 
-    gcs = st.number_input("",value=0.50)
+    gcs1 = st.number_input("",value=0.50,key='gcs1')
 
-    feature_values = [resp_rate_median_value,sbp_min_value,agp_avg,hr_max_value,icustay_seq,Disease_Onset_Period,agp_min,lactate_mean,Age,wbc,resp_rate_max_value,bun,hr_min_value,creatinine_baseline,sbp_variance_value,ventilation,pco2,totalco2,weight,gcs]
+    feature_values = [resp_rate_median_value1,sbp_min_value1,agp_avg1,hr_max_value1,icustay_seq1,Disease_Onset_Period1,agp_min1,lactate_mean1,Age1,wbc1,resp_rate_max_value1,bun1,hr_min_value1,creatinine_baseline1,sbp_variance_value1,ventilation1,pco21,totalco21,weight1,gcs1]
     features = np.array([feature_values])    
 
     if st.button("Predict"):    
