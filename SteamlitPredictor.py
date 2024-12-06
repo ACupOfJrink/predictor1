@@ -184,7 +184,7 @@ else:
         st.write(advice)
         K = 100
         X_train=pd.read_csv('COVID_Filled_cut_missing_row.csv')
-        Death_top_feature=list(pd.read_excel("top_20_features_death.xlsx").feature)
+        Death_top_feature=list(pd.read_csv("top_20_features_death1.csv").feature)
         X_train1=X_train[Death_top_feature]
         X_train_kmeans = shap.kmeans(X_train1, K)
 
