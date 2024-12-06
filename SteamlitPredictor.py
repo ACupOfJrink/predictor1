@@ -71,7 +71,7 @@ if Choice==0:
     features = np.array([feature_values])
     if st.button("Predict"):    
         # Predict class and probabilities    
-        predicted_class = Sepsismodel.predict(features)    
+        predicted_class = Sepsismodel.predict(features)[0]   
         predicted_proba = Sepsismodel.predict_proba(features)
 
         # Display prediction results    
@@ -79,7 +79,7 @@ if Choice==0:
         st.write(f"**Prediction Probabilities:** {predicted_proba}")
 
         # Generate advice based on prediction results    
-        probability = predicted_proba[int(predicted_class)] * 100
+        probability = predicted_proba[predicted_class] * 100
 
         if predicted_class == 1:        
             advice = (            
