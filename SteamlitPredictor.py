@@ -157,15 +157,15 @@ else:
     feature_values1 = [resp_rate_median_value1,sbp_min_value1,agp_avg1,hr_max_value1,icustay_seq1,Disease_Onset_Period1,agp_min1,lactate_mean1,Age1,wbc1,resp_rate_max_value1,bun1,hr_min_value1,creatinine_baseline1,sbp_variance_value1,ventilation1,pco21,totalco21,weight1,gcs1]
     NormData1 = [(b-a)/(c-a) for a,b,c in zip(Ddata1.loc["min"],feature_values1,Ddata1.loc['max'])]
     NormData2 = [round(i,2) for i in NormData1]
-    features1 = np.array([NormData2]) 
+    features1 = NormData2 
     if st.button("Predict"):    
         # Predict class and probabilities    
-        predicted_class = Deathmodel.predict(features1)[0]    
-        predicted_proba = Deathmodel.predict_proba(features1)[0]
+        predicted_class = Deathmodel.predict([features1])[0]    
+        predicted_proba = Deathmodel.predict_proba([features1])[0]
 
         # Display prediction results    
         st.write(f"**Predicted Class:** {predicted_class}")    
-        st.write(f"**Prediction Probabilities:** {predicted_proba}")
+        st.write(f"**Prediction Probabilities:** {[predicted_proba[1],predicted_proba[0]]}")
 
         # Generate advice based on prediction results    
         probability = predicted_proba[predicted_class] * 100
