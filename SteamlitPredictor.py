@@ -10,9 +10,18 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 
 
-X_sca=pd.read_csv('COVID_Filled_cut_missing_row.csv')
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X_sca)
+df=pd.read_csv('COVID_Filled_cut_missing_row.csv')
+Sepsis_top_feature=list(pd.read_csv("top_20_features_Sepsis1.csv").feature)
+XS = df[Sepsis_top_feature]
+df1=df[df['Is_Sepsis_Yes1No0']==1]
+Death_top_feature=list(pd.read_csv("top_20_features_death1.csv").feature)
+XD = df1[Death_top_feature]
+
+scalerS = StandardScaler()
+X_scaledS = scalerS.fit_transform(XS)
+scalerD = StandardScaler()
+X_scaledD = scalerD.fit_transform(XD)
+
 
 
 # Load the model
@@ -75,7 +84,7 @@ if Choice==0:
     resp_rate_variance_value = st.number_input("Resp Rate Variance: respiratory rate(No unit)", value=20.56, min_value=0.00, max_value=119.17, key="resp_rate_variance_value")
     Ddata = round(pd.read_csv("CovidDataDiscribe.csv",index_col=0),2)
     feature_values = [agp_min, bun, hospstay_seq, sbp_min_value, po2, resp_rate_avg_value, Disease_Onset_Period, hr_max_value, agp_max, los_icu, resp_rate_max_value, ast_max, ph, creatinine, inr_avg, ventilation, pco2, Gender, gcs, resp_rate_variance_value]
-    NormData = scaler.transform([feature_values])
+    NormData = scalerS.transform(feature_values)
     features = np.array([NormData])
     if st.button("Predict"):    
         # Predict class and probabilities    
@@ -162,7 +171,7 @@ else:
 
     Ddata1 = round(pd.read_csv("CovidDataDeathDiscribe.csv",index_col=0),2)
     feature_values1 = [resp_rate_median_value1,sbp_min_value1,agp_avg1,hr_max_value1,icustay_seq1,Disease_Onset_Period1,agp_min1,lactate_mean1,Age1,wbc1,resp_rate_max_value1,bun1,hr_min_value1,creatinine_baseline1,sbp_variance_value1,ventilation1,pco21,totalco21,weight1,gcs1]
-    NormData1 = scaler.transform(feature_values1)
+    NormData1 = scalerD.transform(feature_values1)
     NormData2 = [round(i,2) for i in NormData1]
     features1 = NormData2 
     if st.button("Predict"):    
