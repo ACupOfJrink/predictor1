@@ -194,8 +194,8 @@ else:
         string1="please wait for the generation of the SHAP force plot"
         st.write(string1)
         explainer1 = shap.KernelExplainer(Deathmodel.predict_proba , X_train_kmeans)
-        shap_values1 = explainer1.shap_values(pd.DataFrame([feature_values1],columns=feature_names1))
-        shap.force_plot(explainer1.expected_value[0], shap_values1[0,:,0], pd.DataFrame([feature_values1],columns=feature_names1), matplotlib=True)   
+        shap_values1 = explainer1.shap_values(pd.DataFrame([feature1],columns=feature_names1))
+        shap.force_plot(explainer1.expected_value[0], shap_values1[0,:,0], pd.DataFrame([feature1],columns=feature_names1), matplotlib=True)   
         plt.savefig("shap_force_plot.png", bbox_inches='tight', dpi=1200)
         st.image("shap_force_plot.png")
         string1=''
