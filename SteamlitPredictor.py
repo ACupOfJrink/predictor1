@@ -153,7 +153,7 @@ else:
     #ok
     gcs1 = st.number_input("gcs: Glasgow Coma Scale(No unit)", value=14.22, min_value=3.00, max_value=15.00, key='gcs1')
 
-    Ddata1 = pd.read_csv("CovidDataDeathDiscribe.csv")
+    Ddata1 = round(pd.read_csv("CovidDataDeathDiscribe.csv",index_col=0),2)
     feature_values1 = [resp_rate_median_value1,sbp_min_value1,agp_avg1,hr_max_value1,icustay_seq1,Disease_Onset_Period1,agp_min1,lactate_mean1,Age1,wbc1,resp_rate_max_value1,bun1,hr_min_value1,creatinine_baseline1,sbp_variance_value1,ventilation1,pco21,totalco21,weight1,gcs1]
     NormData1 = [(b-a)/(c-a) for a,b,c in zip(Ddata1.loc["min"],feature_values1,Ddata1.loc['max'])]
     features1 = np.array([NormData1]) 
