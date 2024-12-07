@@ -11,7 +11,7 @@ from sklearn.preprocessing import StandardScaler
 
 
 df=pd.read_csv('COVID_Filled_cut_missing_row.csv')
-Sepsis_top_feature=list(pd.read_csv("top_20_features_Sepsis1.csv").feature)
+Sepsis_top_feature=list(pd.read_csv("top_20_features_Sepsis.csv").feature)
 XS = df[Sepsis_top_feature]
 df1=df[df['Is_Sepsis_Yes1No0']==1]
 Death_top_feature=list(pd.read_csv("top_20_features_death1.csv").feature)
