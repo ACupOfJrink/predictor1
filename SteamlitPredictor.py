@@ -84,8 +84,8 @@ if Choice==0:
     resp_rate_variance_value = st.number_input("Resp Rate Variance: respiratory rate(No unit)", value=20.56, min_value=0.00, max_value=119.17, key="resp_rate_variance_value")
     Ddata = round(pd.read_csv("CovidDataDiscribe.csv",index_col=0),2)
     feature_values = [agp_min, bun, hospstay_seq, sbp_min_value, po2, resp_rate_avg_value, Disease_Onset_Period, hr_max_value, agp_max, los_icu, resp_rate_max_value, ast_max, ph, creatinine, inr_avg, ventilation, pco2, Gender, gcs, resp_rate_variance_value]
-    NormData = scalerS.transform(feature_values)
-    features = np.array([NormData])
+    NormData = scalerS.transform([feature_values])
+    features = np.array(NormData)
     if st.button("Predict"):    
         # Predict class and probabilities    
         predicted_class = Sepsismodel.predict(features)[0]   
