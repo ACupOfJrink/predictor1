@@ -171,8 +171,8 @@ else:
 
     Ddata1 = round(pd.read_csv("CovidDataDeathDiscribe.csv",index_col=0),2)
     feature_values1 = [resp_rate_median_value1,sbp_min_value1,agp_avg1,hr_max_value1,icustay_seq1,Disease_Onset_Period1,agp_min1,lactate_mean1,Age1,wbc1,resp_rate_max_value1,bun1,hr_min_value1,creatinine_baseline1,sbp_variance_value1,ventilation1,pco21,totalco21,weight1,gcs1]
-    NormData1 = scalerD.transform(feature_values1)
-    NormData2 = [round(i,2) for i in NormData1]
+    NormData1 = scalerD.transform([feature_values1])
+    NormData2 = [round(i,2) for i in NormData1[0]]
     features1 = NormData2 
     if st.button("Predict"):    
         # Predict class and probabilities    
