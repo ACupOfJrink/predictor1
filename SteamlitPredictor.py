@@ -5,7 +5,7 @@ import streamlit as st
 import joblib
 import numpy as np
 import pandas as pd
-import shape
+import shap
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 
