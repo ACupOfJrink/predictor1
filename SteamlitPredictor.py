@@ -174,7 +174,6 @@ else:
     NormData1 = scalerD.transform([feature_values1])
     NormData2 = [round(i,2) for i in NormData1[0]]
     features1 = NormData2 
-    st.write(NormData2)
     if st.button("Predict"):    
         # Predict class and probabilities    
         predicted_class = Deathmodel.predict([features1])[0]    
