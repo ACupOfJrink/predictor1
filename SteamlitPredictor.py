@@ -5,7 +5,7 @@ import streamlit as st
 import joblib
 import numpy as np
 import pandas as pd
-import shap
+import shape
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 
@@ -150,12 +150,20 @@ else:
     weight1 = st.number_input("weight:The lastest recorded weight(kg)", value=83.18, min_value=28.80, max_value=190.00, key='weight1')
     gcs1 = st.number_input("gcs: Glasgow Coma Scale(No unit)", value=14.15, min_value=3.00, max_value=15.00, key='gcs1')
 
-    Ddata1 = round(pd.read_csv("CovidDataDeathDiscribe.csv",index_col=0),2)
-    feature_values1 = [resp_rate_median_value1,sbp_min_value1,agp_avg1,hr_max_value1,icustay_seq1,Disease_Onset_Period1,agp_min1,lactate_mean1,Age1,wbc1,resp_rate_max_value1,bun1,hr_min_value1,creatinine_baseline1,sbp_variance_value1,ventilation1,pco21,totalco21,weight1,gcs1]
-    NormData1 = scalerD.transform([feature_values1])
-    NormData2 = [round(i,2) for i in NormData1[0]]
+    #Ddata1 = round(pd.read_csv("CovidDataDeathDiscribe.csv",index_col=0),2)
+    
+    features1_df = pd.DataFrame([feature_values1], columns=XD.columns)                                              # 将 features1 转换成 DataFrame，确保列名一致
+    
+                                                                                    # 3. 使用已训练的 scaler 对 features1 进行标准化
+    NormData1 = scalerD.transform(features1_df)  
+                    #NormData1 = scalerD.transform([feature_values1])c
+    
+    normdata1_list = NormData1.flatten().tolist()
+    NormData2 = [round(i,2) for i in normdata1_list]
+    #NormData2=[0.51, -0.55, 0.48, -0.58, -0.3, 0.26, 0.32, -0.06, 0.71, 0.31, -0.56, 0.35, -0.55, -0.03, 0.32, 1.15, 0.42, -0.37, 0.51, 0.4]
+    
     features1 = NormData2 
-    features1 = [0.72,-0.08,-0.37,-1.87,-0.30,-0.38,-0.84,-0.06,0.56,0.19,0.31,-1.20,-0.28,-1.40,-0.25,-0.053,1.14,-0.50,-0.12,-0.57]
+
 
     if st.button("Predict"):    
         # Predict class and probabilities    
