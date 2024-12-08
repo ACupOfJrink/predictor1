@@ -129,124 +129,26 @@ if Choice==0:
 else:
     #
     feature_names1 = ['resp_median', 'sbp_min', 'agp_avg', 'hr_max', 'icustay_seq', 'DOP', 'agp_min', 'lactate_mean', 'Age', 'wbc', 'resp_max', 'bun', 'hr_min', 'creatinine', 'sbp_var', 'ventilation', 'pco2', 'totalco2', 'weight', 'gcs']
-    resp_rate_median_value1 = st.number_input("resp rate median value:respiratory rate(insp/min)", 
-                                             value=20.55, 
-                                             min_value=11, 
-                                             max_value=43.5, 
-                                             key='resp_rate_median_value1')
-    
-    sbp_min_value1 = st.number_input("sbp min value: systolic blood pressure(mmHg)", 
-                                    value=78.73, 
-                                    min_value=6, 
-                                    max_value=149, 
-                                    key='sbp_min_value1')
-    
-    agp_avg1 = st.number_input("agp avg1:Anion gap(mEq/L)", 
-                               value=12.32, 
-                               min_value=4, 
-                               max_value=29, 
-                               key='agp_avg1')
-    
-    hr_max_value1 = st.number_input("hr max value1:Heart rate (bpm)", 
-                                    value=120.86, 
-                                    min_value=66, 
-                                    max_value=282, 
-                                    key='hr_max_value1')
-    
-    icustay_seq1 = st.number_input("icustay seq:ICU sequence (No unit):", 
-                                   value=1.11, 
-                                   min_value=1, 
-                                   max_value=5, 
-                                   key='icustay_seq1')
-    
-    Disease_Onset_Period1 = st.number_input("Disease Onset Period(DOP):Hours between hospital admit and ICU admit(hours)", 
-                                            value=20.68, 
-                                            min_value=0, 
-                                            max_value=186, 
-                                            key='Disease_Onset_Period1')
-    
-    agp_min1 = st.number_input("agp min:Anion gap(mEq/L)", 
-                               value=7.91, 
-                               min_value=-10, 
-                               max_value=33, 
-                               key='agp_min1')
-    
-    lactate_mean1 = st.number_input("lactate mean (mg)", 
-                                    value=2.50, 
-                                    min_value=0.3, 
-                                    max_value=27, 
-                                    key='lactate_mean1')
-    
-    Age1 = st.number_input("Age: Lastest record(year)", 
-                           value=64.78, 
-                           min_value=18, 
-                           max_value=102, 
-                           key='Age1')
-    
-    wbc1 = st.number_input("wbc: Lastest recorded white blood count(K/uL)", 
-                           value=11.23, 
-                           min_value=0.1, 
-                           max_value=92.20, 
-                           key='wbc1')
-    
-    resp_rate_max_value1 = st.number_input("resp rate max value:respiratory rate(insp/min)", 
-                                           value=34.94, 
-                                           min_value=15, 
-                                           max_value=536, 
-                                           key='resp_rate_max_value1')
-    
-    bun1 = st.number_input("bun: The lastest recorded blood urea nitrogen(mg/dL)", 
-                           value=33.57, 
-                           min_value=3, 
-                           max_value=180, 
-                           key='bun1')
-    
-    hr_min_value1 = st.number_input("HR(Heart Rate) min value (bpm)", 
-                                    value=64.62, 
-                                    min_value=7, 
-                                    max_value=149, 
-                                    key='hr_min_value1')
-    
-    creatinine_baseline1 = st.number_input("creatinine baseline(mg/dL):", 
-                                           value=1.04, 
-                                           min_value=0.14, 
-                                           max_value=16.2, 
-                                           key='creatinine_baseline1')
-    
-    sbp_variance_value1 = st.number_input("sbp variance value: systolic blood pressure(mmHg)", 
-                                          value=278.85, 
-                                          min_value=0.5, 
-                                          max_value=2550.72, 
-                                          key='sbp_variance_value1') 
-    
-    ventilation1 = st.selectbox("ventilation(Yes or No)", 
-                                options=[0, 1], 
-                                format_func=lambda x: 'No' if x == 0 else 'Yes', 
-                                key="ventilation1")
-    
-    pco21 = st.number_input("pco2:Lastest recorded (mmHg)", 
-                            value=45.61, 
-                            min_value=0, 
-                            max_value=104, 
-                            key='pco21')
-    
-    totalco21 = st.number_input("totalco2:The lastest recorded total of CO2(mEq/L)", 
-                                value=23.76, 
-                                min_value=4, 
-                                max_value=51, 
-                                key='totalco21')  
-    
-    weight1 = st.number_input("weight:The lastest recorded weight(kg)", 
-                              value=83.18, 
-                              min_value=28.8, 
-                              max_value=190, 
-                              key='weight1')  
-    
-    gcs1 = st.number_input("gcs: Glasgow Coma Scale(No unit)", 
-                           value=14.15, 
-                           min_value=3, 
-                           max_value=15, 
-                           key='gcs1')
+    resp_rate_median_value1 = st.number_input("resp rate median value:respiratory rate(insp/min)", value=20.55, min_value=11, max_value=43.5, key='resp_rate_median_value1')
+    sbp_min_value1 = st.number_input("sbp min value: systolic blood pressure(mmHg)", value=78.73, min_value=6, max_value=149, key='sbp_min_value1')
+    agp_avg1 = st.number_input("agp avg1:Anion gap(mEq/L)", value=12.32, min_value=4, max_value=29, key='agp_avg1')
+    hr_max_value1 = st.number_input("hr max value1:Heart rate (bpm)", value=120.86, min_value=66, max_value=282, key='hr_max_value1')
+    icustay_seq1 = st.number_input("icustay seq:ICU sequence (No unit):", value=1.11, min_value=1, max_value=5, key='icustay_seq1')
+    Disease_Onset_Period1 = st.number_input("Disease Onset Period(DOP):Hours between hospital admit and ICU admit(hours)", value=20.68, min_value=0, max_value=186, key='Disease_Onset_Period1')
+    agp_min1 = st.number_input("agp min:Anion gap(mEq/L)", value=7.91, min_value=-10, max_value=33, key='agp_min1')
+    lactate_mean1 = st.number_input("lactate mean (mg)", value=2.50, min_value=0.3, max_value=27, key='lactate_mean1')
+    Age1 = st.number_input("Age: Lastest record(year)", value=64.78, min_value=18, max_value=102, key='Age1')
+    wbc1 = st.number_input("wbc: Lastest recorded white blood count(K/uL)", value=11.23, min_value=0.1, max_value=92.20, key='wbc1')
+    resp_rate_max_value1 = st.number_input("resp rate max value:respiratory rate(insp/min)", value=34.94, min_value=15, max_value=536, key='resp_rate_max_value1')
+    bun1 = st.number_input("bun: The lastest recorded blood urea nitrogen(mg/dL)", value=33.57, min_value=3, max_value=180, key='bun1')
+    hr_min_value1 = st.number_input("HR(Heart Rate) min value (bpm)", value=64.62, min_value=7, max_value=149, key='hr_min_value1')
+    creatinine_baseline1 = st.number_input("creatinine baseline(mg/dL):", value=1.04, min_value=0.14, max_value=16.2, key='creatinine_baseline1')
+    sbp_variance_value1 = st.number_input("sbp variance value: systolic blood pressure(mmHg)", value=278.85, min_value=0.5, max_value=2550.72, key='sbp_variance_value1')
+    ventilation1 = st.selectbox("ventilation(Yes or No)", options=[0, 1], format_func=lambda x: 'No' if x == 0 else 'Yes', key="ventilation1")
+    pco21 = st.number_input("pco2:Lastest recorded (mmHg)", value=45.61, min_value=0, max_value=104, key='pco21')
+    totalco21 = st.number_input("totalco2:The lastest recorded total of CO2(mEq/L)", value=23.76, min_value=4, max_value=51, key='totalco21')
+    weight1 = st.number_input("weight:The lastest recorded weight(kg)", value=83.18, min_value=28.8, max_value=190, key='weight1')
+    gcs1 = st.number_input("gcs: Glasgow Coma Scale(No unit)", value=14.15, min_value=3, max_value=15, key='gcs1')
 
     Ddata1 = round(pd.read_csv("CovidDataDeathDiscribe.csv",index_col=0),2)
     feature_values1 = [resp_rate_median_value1,sbp_min_value1,agp_avg1,hr_max_value1,icustay_seq1,Disease_Onset_Period1,agp_min1,lactate_mean1,Age1,wbc1,resp_rate_max_value1,bun1,hr_min_value1,creatinine_baseline1,sbp_variance_value1,ventilation1,pco21,totalco21,weight1,gcs1]
