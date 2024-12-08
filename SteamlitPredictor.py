@@ -155,6 +155,8 @@ else:
     NormData1 = scalerD.transform([feature_values1])
     NormData2 = [round(i,2) for i in NormData1[0]]
     features1 = NormData2 
+    features1 = [0.72,-0.08,-0.37,-1.87,-0.30,-0.38,-0.84,-0.06,0.56,0.19,0.31,-1.20,-0.28,-1.40,-0.25,-0.053,1.14,-0.50,-0.12,-0.57]
+
     if st.button("Predict"):    
         # Predict class and probabilities    
         predicted_class = Deathmodel.predict([features1])[0]    
