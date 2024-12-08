@@ -172,7 +172,7 @@ else:
         predicted_proba = Deathmodel.predict_proba([features1])[0]
 
         # Display prediction results    
-        st.write(features1)
+
         st.write(f"**Predicted Class:** {predicted_class}")    
         st.write(f"**Prediction Probabilities:** {[predicted_proba[1],predicted_proba[0]]}")
 
