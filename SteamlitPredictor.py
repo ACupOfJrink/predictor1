@@ -106,7 +106,7 @@ if Choice==0:
 # Choose target "Death" 
 else:
     #
-    feature_names1 = ['res_med', 'sbp_min', 'agp_avg', 'hr_max', 'icu_seq', 'DOP', 'agp_min', 'lac_mea', 'Age', 'wbc', 'res_max', 'bun', 'hr_min', 'cre', 'sbp_var', 'ven', 'pco2', 'tco2', 'wei', 'gcs']
+    feature_names1 = ['RESme', 'SBPmi', 'AGPav', 'HRma', 'ICU', 'DOP', 'AGPmi', 'LACme', 'Age', 'wbc', 'RESma', 'bun', 'HRmi', 'cr', 'SBPva', 'ven', 'pco2', 'tco2', 'wei', 'gcs']
     resp_rate_median_value1 = st.number_input("resp rate median value:respiratory rate(insp/min)", value=26.0, min_value=11.0, max_value=43.5, key='resp_rate_median_value1')
     sbp_min_value1 = st.number_input("sbp min value: systolic blood pressure(mmHg)", value=46.0, min_value=6.0, max_value=149.0, key='sbp_min_value1')
     agp_avg1 = st.number_input("agp avg1:Anion gap(mEq/L)", value=20.00, min_value=4.0, max_value=29.0, key='agp_avg1')
@@ -152,7 +152,7 @@ else:
         # Display prediction results    
 
         st.write(f"**Predicted Class:** {predicted_class}")    
-        st.write(f"**Prediction Probabilities:** {[predicted_proba[1],predicted_proba[0]]}")
+        st.write(f"**Prediction Probabilities:** {[predicted_proba[0],predicted_proba[1]]}")
 
         # Generate advice based on prediction results    
         probability = predicted_proba[predicted_class] * 100
