@@ -151,7 +151,8 @@ else:
     gcs1 = st.number_input("gcs: Glasgow Coma Scale(No unit)", value=14.15, min_value=3.00, max_value=15.00, key='gcs1')
 
     #Ddata1 = round(pd.read_csv("CovidDataDeathDiscribe.csv",index_col=0),2)
-    
+    feature_values1 = [resp_rate_median_value1,sbp_min_value1,agp_avg1,hr_max_value1,icustay_seq1,Disease_Onset_Period1,agp_min1,lactate_mean1,Age1,wbc1,resp_rate_max_value1,bun1,hr_min_value1,creatinine_baseline1,sbp_variance_value1,ventilation1,pco21,totalco21,weight1,gcs1]
+ 
     features1_df = pd.DataFrame([feature_values1], columns=XD.columns)                                              # 将 features1 转换成 DataFrame，确保列名一致
     
                                                                                     # 3. 使用已训练的 scaler 对 features1 进行标准化
